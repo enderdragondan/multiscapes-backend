@@ -15,6 +15,10 @@ app.add_middleware(
 clients = []
 words = []
 
+@app.get("/")
+async def root():
+    return {"message": "Server is alive"}
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
