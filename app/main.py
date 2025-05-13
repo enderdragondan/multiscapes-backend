@@ -16,7 +16,11 @@ clients = []
 words = []
 
 @app.get("/")
-async def root():
+async def root_get():
+    return {"message": "Server is alive"}
+    
+@app.post("/")
+async def root_post():
     return {"message": "Server is alive"}
 
 @app.websocket("/ws")
